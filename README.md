@@ -49,7 +49,7 @@
 
 
 ## 软件准备
-* 引导工具：Clover
+* 引导工具：[Clover](https://sourceforge.net/projects/cloverefiboot/) or [OpenCore](https://github.com/acidanthera/OpenCorePkg)
     * [Desktop Guide](https://hackintosh.gitbook.io/-r-hackintosh-vanilla-desktop-guide/config.plist-per-hardware/haswell)
     * [OS-X-Clover-Laptop-Config](https://github.com/RehabMan/OS-X-Clover-Laptop-Config)
 * 必备驱动：[FakeSMC](https://bitbucket.org/RehabMan/os-x-fakesmc-kozlek/downloads/) or [VirtualSMC](https://github.com/acidanthera/VirtualSMC)
@@ -61,7 +61,7 @@
 
 
 ### 制作启动优盘
-* [如何创建可引导的 macOS 安装器](https://support.apple.com/zh-cn/HT201372)
+* [如何创建可引导的 macOS 安装器](https://support.apple.com/zh-cn/HT201372) from apple.com
 * **High Sierra** `sudo /Applications/Install\ macOS\ High\ Sierra.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume`
 * 使用工具 [balenaEtcher](https://www.balena.io/etcher/)
 
@@ -99,7 +99,12 @@ macOS 安装成功，下载 Clover 安装到硬盘 EFI/ESP 分区，BIOS 添加 
     * AAPL,slot-name    Built-In    String
 
 ### 开启原生电源管理
-Clover - acpi - Fixes(AddDTGP, FakeLPC) 
+Clover - acpi - Fixes(AddDTGP, FakeLPC)
+
+### 开启 CPU 电源管理
+OpenCore: SSDT-PLUG.dsl --> SSDT-PLUG.aml 放入 EFI/OC/ACPI/ 目录下。
+* > 查看 com.apple.driver.X86PlatformPlugin 是否加载
+* > 系统偏好设置，节能，里是否有`启用电能小憩`选项
 
 ### 开启 HiDPI
 
