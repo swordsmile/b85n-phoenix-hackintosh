@@ -1,5 +1,5 @@
 # b85n-phoenix-hackintosh 简明教程
-GA-B85N Phoenix Hackintosh MacOS High Sierra 10.13.6 (17G8030)
+[GA-B85N Phoenix](https://www.gigabyte.cn/Motherboard/GA-B85N-Phoenix-rev-11) Hackintosh MacOS High Sierra 10.13.6 (17G8030)
 > 由于 NVIDIA Drivers 目前最高只支持 MacOS High Sierra 10.13.6，HD4600 核显又带不动 4K，所以就没有升级 Mojave/Catalina。
 * [tonymacx86.com](https://www.tonymacx86.com/)
 * [黑果小兵](https://blog.daliansky.net/)
@@ -29,6 +29,9 @@ GA-B85N Phoenix Hackintosh MacOS High Sierra 10.13.6 (17G8030)
 | 键盘 | 雷柏 V500 RGB幻彩背光 电竞机械键盘 茶轴 | 299 | 京东 | 2016-04-18 |
 | 鼠标 | 双飞燕（A4TECH） N-810FX | 49.9 | 京东 | 2015-02-27 |
 
+* Device: 1002 67DF Model: Radeon RX 580 (2304SP) **免驱**
+* Device: 1002 6FDF Model: Radeon RX 580 (2048SP) **无法驱动**
+
 
 ## 硬件准备
 * 1 个 16G 大小的 U 盘
@@ -36,7 +39,7 @@ GA-B85N Phoenix Hackintosh MacOS High Sierra 10.13.6 (17G8030)
     * 快速启动 ---> 关闭
     * Windows 8/10 Features ---> Windows 8/10
     * CSM Support ---> Enable
-        * 如果显卡支持纯 UEFI，这项可以关闭（我的 GTX 960 打了补丁），如果不打补丁这个选项不能关闭，不然看不到 Clover 启动界面。
+        * 如果显卡支持纯 UEFI，这项可以关闭（我的 GTX 960 打了 DP 补丁），如果不打补丁这个选项不能关闭，不然看不到 Clover 启动界面。
         * [NVIDIA GRAPHICS FIRMWARE UPDATE TOOL FOR DISPLAYPORT 1.3 AND 1.4 DISPLAYS](https://www.nvidia.com/en-us/drivers/nv-uefi-update-x64/)
     * LAN PXE Boot Option ROM ---> Disabled
     * Legacy USB Support ---> Enabled
@@ -109,3 +112,14 @@ sudo mkdir /var/vm/sleepimage
 sudo pmset -a standby 0
 sudo pmset -a autopoweroff 0
 ```
+
+### 重装缓存
+```bash
+sudo kextcache -i /
+```
+
+
+## 高级进阶
+### DSDT & SSDT
+
+
