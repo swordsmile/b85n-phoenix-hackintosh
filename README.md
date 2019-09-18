@@ -99,7 +99,9 @@ macOS 安装成功，下载 Clover 安装到硬盘 EFI/ESP 分区，BIOS 添加 
     * AAPL,slot-name    Built-In    String
 
 ### 开启原生电源管理
-Clover - acpi - Fixes(AddDTGP, FakeLPC)
+* Clover - acpi - Fixes(AddDTGP, FakeLPC)
+* OpenCore: [SSDT-LPC](https://github.com/RehabMan/OS-X-Clover-Laptop-Config/blob/master/hotpatch/SSDT-LPC.dsl)
+> 系统偏好设置，节能，里是否有`断电后自动重启`选项
 
 ### 开启 CPU 电源管理
 OpenCore: SSDT-PLUG.dsl --> SSDT-PLUG.aml 放入 EFI/OC/ACPI/ 目录下。
@@ -114,6 +116,7 @@ OpenCore: SSDT-PLUG.dsl --> SSDT-PLUG.aml 放入 EFI/OC/ACPI/ 目录下。
 sudo pmset -a hibernatemode 0
 sudo rm /var/vm/sleepimage
 sudo mkdir /var/vm/sleepimage
+# 其它设置
 sudo pmset -a standby 0
 sudo pmset -a autopoweroff 0
 ```
