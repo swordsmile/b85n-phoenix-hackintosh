@@ -103,10 +103,11 @@ macOS 安装成功，下载 Clover 安装到硬盘 EFI/ESP 分区，BIOS 添加 
 * OpenCore: [SSDT-LPC](https://github.com/RehabMan/OS-X-Clover-Laptop-Config/blob/master/hotpatch/SSDT-LPC.dsl)
 > 系统偏好设置，节能，里是否有`断电后自动重启`选项
 
-### 开启 CPU 电源管理
-OpenCore: SSDT-PLUG.dsl --> SSDT-PLUG.aml 放入 EFI/OC/ACPI/ 目录下。
-* > 查看 com.apple.driver.X86PlatformPlugin 是否加载
-* > 系统偏好设置，节能，里是否有`启用电能小憩`选项
+### 开启 CPU 电源管理、变频
+* OpenCore: SSDT-PLUG.dsl --> SSDT-PLUG.aml 放入 EFI/OC/ACPI/ 目录下。
+    * > 查看 com.apple.driver.X86PlatformPlugin 是否加载
+    * > 系统偏好设置，节能，里是否有`启用电能小憩`选项
+* Clover: [SSDT-XCPM.dsl](https://github.com/RehabMan/OS-X-Clover-Laptop-Config)
 
 ### 开启 HiDPI
 
@@ -129,5 +130,8 @@ sudo kextcache -i /
 
 ## 高级进阶
 ### DSDT & SSDT
+* [iasl](https://bitbucket.org/RehabMan/acpica/downloads/)
 
 
+## 参考教程
+* [Hackintosh遇到的问题以及解决方案](https://change-y.github.io/2018/05/03/Hackintosh%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E4%BB%A5%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/)
