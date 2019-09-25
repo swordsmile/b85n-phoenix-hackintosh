@@ -45,12 +45,12 @@
     * Legacy USB Support ---> Enabled
     * XHCI Hand-off ---> Enabled
     * SATA and RST Configuration ---> AHCI
-    * Chipset --- VT-d ---> Disabled or Clover (dart=0) 
+    * Chipset --- VT-d ---> Disabled or Clover (dart=0) or OpenCore (Kernel, Quirks, **DisableIOMapper**: YES)
 
 
 ## 软件准备
 * 引导工具：[Clover](https://sourceforge.net/projects/cloverefiboot/) or [OpenCore](https://github.com/acidanthera/OpenCorePkg)
-    * [Desktop Guide](https://hackintosh.gitbook.io/-r-hackintosh-vanilla-desktop-guide/config.plist-per-hardware/haswell)
+    * [Desktop Guide](https://hackintosh.gitbook.io/-r-hackintosh-vanilla-desktop-guide/config.plist-per-hardware/haswell) [Opencore-Vanilla-Desktop-Guide](https://github.com/khronokernel/Opencore-Vanilla-Desktop-Guide)
     * [OS-X-Clover-Laptop-Config](https://github.com/RehabMan/OS-X-Clover-Laptop-Config)
 * 必备驱动：[FakeSMC](https://bitbucket.org/RehabMan/os-x-fakesmc-kozlek/downloads/) or [VirtualSMC](https://github.com/acidanthera/VirtualSMC)
 
